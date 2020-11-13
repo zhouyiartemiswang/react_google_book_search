@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
     },
     menuButton: {
         marginRight: theme.spacing(2),
-        // color: "white",
     },
     title: {
         flexGrow: 1,
@@ -32,10 +31,7 @@ export default function NavBar() {
                     <Typography variant="h6" className={classes.title}>
                         Google Books
                     </Typography>
-                    {/* <Button color="inherit">
-                        Search
-                    </Button> */}
-                    <Button color="inherit">
+                    <Button className="nav-tab">
                         <Link href="/search">Search</Link>
                     </Button>
                     <Button className="nav-tab">

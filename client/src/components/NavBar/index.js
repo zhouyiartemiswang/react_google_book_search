@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
+import Link from '@material-ui/core/Link';
 import './style.css';
 
 const useStyles = makeStyles((theme) => ({
@@ -13,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
     menuButton: {
         marginRight: theme.spacing(2),
+        // color: "white",
     },
     title: {
         flexGrow: 1,
@@ -30,8 +32,15 @@ export default function NavBar() {
                     <Typography variant="h6" className={classes.title}>
                         Google Books
                     </Typography>
-                    <Button color="inherit">Search</Button>
-                    <Button color="inherit">Save</Button>
+                    {/* <Button color="inherit">
+                        Search
+                    </Button> */}
+                    <Button color="inherit">
+                        <Link href="/search">Search</Link>
+                    </Button>
+                    <Button className="nav-tab">
+                        <Link href="/save">Save</Link>
+                    </Button>
                 </Toolbar>
             </AppBar>
         </div>

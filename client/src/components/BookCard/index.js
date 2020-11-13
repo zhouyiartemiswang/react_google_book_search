@@ -58,7 +58,7 @@ export default function BookCard(props) {
                                 <Button size="small" color="primary">
                                     <Link href="http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api" >
                                         View
-                                </Link>
+                                    </Link>
                                 </Button>
                                 {props.isSearch ?
                                     <Button size="small" color="primary">Save</Button> :

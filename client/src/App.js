@@ -7,14 +7,23 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
     return (
-        <div>
+        <BrowserRouter>
             <NavBar />
             <Jumbotron />
             <Container maxWidth="md">
-                <Search isSearch={true} />
-                <Save isSearch={false} />
+                <Switch>
+                    <Route exact path="/">
+                    </Route>
+                    <Route exact path="/search">
+                        <Search isSearch={true} />
+                    </Route>
+                    <Route exact path="/save">
+                        <Save isSearch={false} />
+                    </Route>
+
+                </Switch>
             </Container>
-        </div>
+        </BrowserRouter>
     );
 }
 

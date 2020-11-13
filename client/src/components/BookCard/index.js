@@ -38,25 +38,25 @@ export default function BookCard(props) {
                 <Grid container spacing={2}>
                     <Grid item>
                         <ButtonBase className={classes.image}>
-                            <img className={classes.img} alt="Hunger Games" src="http://books.google.com/books/content?id=sazytgAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" />
+                            <img className={classes.img} alt={props.title} src={props.image} />
                         </ButtonBase>
                     </Grid>
                     <Grid item xs={12} sm container>
                         <Grid item xs container direction="column" spacing={2}>
                             <Grid item xs>
                                 <Typography gutterBottom variant="subtitle1">
-                                    Hunger Games
+                                    {props.title}
                                 </Typography>
                                 <Typography variant="body2" gutterBottom>
-                                    Written by Suzanne Collins
+                                    Written by {props.authors}
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary">
-                                    Set in a dark vision of the near future, a terrifying reality TV show is taking place. Twelve boys and twelve girls are forced to appear in a live event called The Hunger Games. There is only one rule: kill or be killed. When sixteen-year-old Katniss Everdeen steps forward to take her younger sister's place in the games, she sees it as a death sentence. But Katniss has been close to death before. For her, survival is second nature.
+                                    {props.description}
                                 </Typography>
                             </Grid>
                             <Grid item>
                                 <Button size="small" color="primary">
-                                    <Link href="http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api" >
+                                    <Link href={props.link} >
                                         View
                                     </Link>
                                 </Button>

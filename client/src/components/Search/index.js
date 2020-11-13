@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
+import API from '../../utils/API';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import BookCard from '../BookCard';
 import './style.css';
 
@@ -16,13 +16,44 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Search() {
     const classes = useStyles();
+    const [bookState, setBookState] = useState([]);
+    const [formState, setFormState] = useState({
+        query: ""
+    });
+
+    function handleInputChange(event) {
+        setFormState({ query: event.target.value })
+    };
+
+    function handleFormSubmit(event) {
+        event.preventDefault();
+
+        API.searchBooks(formState.query)
+            .then(res => setBookState(res.data.items))
+            .catch(err => console.log(err));
+    };
+
     return (
         <>
-            <form className={classes.root} noValidate autoComplete="off">
-                <TextField id="outlined-basic" label="Search for books" variant="outlined" />
-                <Button variant="contained">Search</Button>
+            <form onSubmit={handleFormSubmit} className={classes.root}>
+                <TextField
+                    onChange={handleInputChange}
+                    value={formState.query}
+                    name="query"
+                    id="outlined-basic"
+                    label="Search for books"
+                    variant="outlined" />
             </form>
-            <BookCard />
+            {bookState.map(bookObj =>
+                <BookCard
+                    key={bookObj._id}
+                    title={bookObj.volumeInfo.title}
+                    authors={bookObj.volumeInfo.authors}
+                    description={bookObj.volumeInfo.description}
+                    image={bookObj.volumeInfo.imageLinks.thumbnail}
+                    link={bookObj.volumeInfo.selfLink}
+                    isSearch={true}
+                />)}
         </>
     )
 }

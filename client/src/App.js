@@ -1,7 +1,7 @@
 import NavBar from './components/NavBar';
 import Jumbotron from './components/Jumbotron';
 import Search from './components/Search';
-import Save from './components/Save';
+import Saved from './components/Saved';
 import Container from '@material-ui/core/Container';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
@@ -17,10 +17,9 @@ function App() {
                     <Route exact path="/search">
                         <Search isSearch={true} />
                     </Route>
-                    <Route exact path="/save">
-                        <Save isSearch={false} />
+                    <Route exact path="/saved">
+                        <Saved isSearch={false} />
                     </Route>
-
                 </Switch>
             </Container>
         </BrowserRouter>

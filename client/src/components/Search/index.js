@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function Search() {
+export default function Search(props) {
     const classes = useStyles();
     const [bookState, setBookState] = useState([]);
     const [formState, setFormState] = useState({
@@ -51,8 +51,8 @@ export default function Search() {
                     authors={bookObj.volumeInfo.authors}
                     description={bookObj.volumeInfo.description}
                     image={bookObj.volumeInfo.imageLinks.thumbnail}
-                    link={bookObj.volumeInfo.selfLink}
-                    isSearch={true}
+                    link={bookObj.volumeInfo.infoLink}
+                    isSearch={props.isSearch}
                 />)}
         </>
     )

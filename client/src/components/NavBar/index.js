@@ -35,7 +35,7 @@ export default function NavBar() {
                         <Link href="/search">Search</Link>
                     </Button>
                     <Button className="nav-tab">
-                        <Link href="/save">Save</Link>
+                        <Link href="/saved">Saved</Link>
                     </Button>
                 </Toolbar>
             </AppBar>

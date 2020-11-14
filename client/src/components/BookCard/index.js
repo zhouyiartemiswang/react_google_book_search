@@ -31,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function BookCard(props) {
     const classes = useStyles();
-    
 
     return (
         <div className={classes.root}>

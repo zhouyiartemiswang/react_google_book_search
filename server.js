@@ -21,9 +21,9 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks");
 app.use("/api", apiRoutes);
 
 // Send every request to the React app
-app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
-});
+// app.get("*", function (req, res) {
+//     res.sendFile(path.join(__dirname, "index.html"));
+// });
 
 // Listening on PORT
 app.listen(PORT, function () {

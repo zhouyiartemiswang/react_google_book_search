@@ -22,7 +22,7 @@ app.use("/api", apiRoutes);
 
 // Send every request to the React app
 app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+    res.sendFile(path.join(__dirname, "index.html"));
 });
 
 // Listening on PORT
